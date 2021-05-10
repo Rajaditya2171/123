@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIMESHEET</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="mainDiv">
+    <h3>Welcome to our Company</h3>
+    <h4>Enter your details and sumit your timesheet</h4>
+    <P>Select Date : <input type="date" id="takedate" onchange="setDate()"></P><br>
+    <table style="width:100%">
+        <tr>
+            <th>Project Name</th>
+            <th> Monday <label id="mon"></label></th>
+            <th> Tuesday <label id="tus"></label></th>
+            <th> Wednesday <label id="wed"></label></th>
+            <th> Thrusday <label id="thu"></label></th>
+            <th> Friday <label id="fri"></label></th>
+            <th> Saturday <label id="sat"></label></th>
+            <th> Sunday <label id="sun"></label></th>
+        </tr>
+        <tr>
+            <td>Project 1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Project 2</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Project 3</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+<script>
+    function setDate(){
+    //DATE OBJECT
+    var dt = new Date(document.getElementById('takedate').value);
+    // GET THE DATE, MONTH AND YEAR OF THE SELECTED DATE.
+    var date = dt.getDate(),
+        month = dt.getMonth(),
+        year = dt.getFullYear();
+    // GET THE DAY
+    var weekday = new Array(7);
+        weekday[0] = "Sunday";
+        weekday[1] = "Monday";
+        weekday[2] = "Tuesday";
+        weekday[3] = "Wednesday";
+        weekday[4] = "Thursday";
+        weekday[5] = "Friday";
+        weekday[6] = "Saturday";
+        // var days = weekday[dt.getDay()];
+
+    // days.setDate(days.getDate() + parseInt(days));
+    // console.log(days).valueAsDate = date;
+
+    document.getElementById("mon").innerHTML = date+0;
+    document.getElementById("tus").innerHTML = date+1;
+    document.getElementById("wed").innerHTML = date+2;
+    document.getElementById("thu").innerHTML = date+3;
+    document.getElementById("fri").innerHTML = date+4;
+    document.getElementById("sat").innerHTML = date+5;
+    document.getElementById("sun").innerHTML = date+6;
+}
+
+</script>
+
+</body>
+</html>
